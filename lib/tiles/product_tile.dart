@@ -29,8 +29,8 @@ class ProductTile extends StatelessWidget {
                           product.title,
                           style: TextStyle(fontWeight: FontWeight.w500),
                         ),
-                        Text(
-                            "R\$ ${}")
+//                        Text(
+//                            "R\$ ${}")
                       ],
                     ),
                   ),
