@@ -41,7 +41,7 @@ class CategoryScreen extends StatelessWidget {
                 );
               } else {
                 return TabBarView(
-                    physics: NeverScrollableScrollPhysics(),
+//                    physics: NeverScrollableScrollPhysics(),
                     children: [
                       GridView.builder(
                           padding: EdgeInsets.all(4.0),
