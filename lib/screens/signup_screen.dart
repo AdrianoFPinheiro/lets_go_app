@@ -50,7 +50,7 @@ class SignupScreen extends StatelessWidget {
                 hintText: "Endereço",
               ),
               validator: (text){
-                if(text.isEmpty) return "Digite o endereço!";
+                if(text.isEmpty) return "Digite o endereço da loja!";
               },
             ),
             SizedBox(height: 16.0,),
