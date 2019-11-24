@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:loja_virtual/screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
-
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -13,7 +13,10 @@ class LoginScreen extends StatelessWidget {
         actions: <Widget>[
 //          IconButton(icon: null, onPressed: null)
           FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => SignupScreen()));
+            },
             child: Text(
               "CRIAR CONTA",
               style: TextStyle(
@@ -34,18 +37,21 @@ class LoginScreen extends StatelessWidget {
                 hintText: "E-mail",
               ),
               keyboardType: TextInputType.emailAddress,
-              validator: (text){
-                if(text.isEmpty || !text.contains("@")) return "E-mail inválido!";
+              validator: (text) {
+                if (text.isEmpty || !text.contains("@"))
+                  return "E-mail inválido!";
               },
             ),
-            SizedBox(height: 16.0,),
+            SizedBox(
+              height: 16.0,
+            ),
             TextFormField(
               decoration: InputDecoration(
                 hintText: "Senha",
               ),
               obscureText: true,
-              validator: (text){
-                if(text.isEmpty || text.length < 6) return "Senha inválida!";
+              validator: (text) {
+                if (text.isEmpty || text.length < 6) return "Senha inválida!";
               },
             ),
             Align(
@@ -53,28 +59,30 @@ class LoginScreen extends StatelessWidget {
               child: FlatButton(
                 padding: EdgeInsets.zero,
                 onPressed: () {},
-                child: Text("Esqueci minha senha",
-                  textAlign: TextAlign.right,),
+                child: Text(
+                  "Esqueci minha senha",
+                  textAlign: TextAlign.right,
+                ),
               ),
             ),
-            SizedBox(height: 16.0,),
             SizedBox(
-                height: 44.0,
-                child: RaisedButton(
-                  textColor: Colors.white,
-                  color: Theme
-                      .of(context)
-                      .primaryColor,
-                  child: Text("Entrar",
-                    style: TextStyle(
-                      fontSize: 18.0,
-                    ),),
-                  onPressed: () {
-                    if(_formKey.currentState.validate()){
-
-                    }
-                  },
+              height: 16.0,
+            ),
+            SizedBox(
+              height: 44.0,
+              child: RaisedButton(
+                textColor: Colors.white,
+                color: Theme.of(context).primaryColor,
+                child: Text(
+                  "Entrar",
+                  style: TextStyle(
+                    fontSize: 18.0,
+                  ),
                 ),
+                onPressed: () {
+                  if (_formKey.currentState.validate()) {}
+                },
+              ),
             ),
           ],
         ),
