@@ -38,11 +38,30 @@ class UserModel extends Model {
     });
   }
 
-  void signIn() {}
+  void signIn() async{
+    isLoading = true;
+    notifyListeners();
+
+    await Future.delayed(Duration(seconds: 3));
+
+    isLoading = false;
+    notifyListeners();
+  }
+
+  void signOut() async {
+    await _auth.signOut();
+
+    userData = Map();
+    firebaseUser = null;
+
+    notifyListeners();
+  }
 
   void recoverPass() {}
 
-  bool isLoggedIn() {}
+  bool isLoggedIn() {
+    return firebaseUser != null;
+  }
 
   Future<Null> _saveUserData(Map<String, dynamic> userData) async {
     this.userData = userData;
@@ -51,4 +70,6 @@ class UserModel extends Model {
         .document(firebaseUser.uid)
         .setData(userData);
   }
+
+
 }

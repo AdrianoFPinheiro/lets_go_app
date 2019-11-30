@@ -17,7 +17,7 @@ class LoginScreen extends StatelessWidget {
           FlatButton(
             onPressed: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => SignupScreen()));
+                  MaterialPageRoute(builder: (context) => SignUpScreen()));
             },
             child: Text(
               "CRIAR CONTA",
