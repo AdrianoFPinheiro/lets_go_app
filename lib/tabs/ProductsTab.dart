@@ -16,7 +16,8 @@ class ProductsTab extends StatelessWidget {
           return ListView(
             children: ListTile.divideTiles(
               context: context,
-              tiles: snapshot.data.documents.map((document) => CategoryTile(document)),
+              tiles: snapshot.data.documents.map((document) =>
+                  CategoryTile(document)),
               color: Colors.grey[500],
             ).toList(),
           );

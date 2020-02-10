@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return ScopedModel<UserModel>(
       model: UserModel(),
         child: MaterialApp(
-          title: 'Loja Virtual Flutter',
+          title: 'Lets Go!',
           theme: ThemeData(
             primarySwatch: Colors.blue,
             primaryColor: Color.fromARGB(255, 0, 0, 255),
